@@ -125,7 +125,7 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="{asset{('admin/images/salt_logo.svg')}}" alt="Logo"></a>
+        <a class="navbar-brand brand-logo" href="index.html"><img src="{{asset('admin/images/salt_logo.svg')}}" alt="Logo"></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
@@ -190,8 +190,8 @@
                   <span class="badge badge-success">&nbsp;</span>
                 </div>
                 <div class="sender">
-                  <p class="Sende-name">John Doe</p>
-                  <p class="Sender-message">Hey, We have a meeting planned at the end of the day.</p>
+                  <p class="Sende-name">View Profile</p>
+
                 </div>
               </a>
               <a class="dropdown-item" href="#">
@@ -200,30 +200,21 @@
                   <span class="badge badge-success">&nbsp;</span>
                 </div>
                 <div class="sender">
-                  <p class="Sende-name">Leanne Jones</p>
-                  <p class="Sender-message">Can we schedule a call this afternoon?</p>
+                  <p class="Sende-name">Setting</p>
+
                 </div>
               </a>
-              <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="{{route('admin.logout')}}">
                 <div class="sender-img">
                   <img src="http://via.placeholder.com/47x47" alt="">
                   <span class="badge badge-primary">&nbsp;</span>
                 </div>
                 <div class="sender">
-                  <p class="Sende-name">Stella</p>
-                  <p class="Sender-message">Great presentation the other day. Keep up the good work!</p>
+                  <p class="Sende-name">Logout</p>
+
                 </div>
               </a>
-              <a class="dropdown-item" href="#">
-                <div class="sender-img">
-                  <img src="http://via.placeholder.com/47x47" alt="">
-                  <span class="badge badge-warning">&nbsp;</span>
-                </div>
-                <div class="sender">
-                  <p class="Sende-name">James Brown</p>
-                  <p class="Sender-message">Need the updates of the project at the end of the week.</p>
-                </div>
-              </a>
+
               <a href="#" class="dropdown-item view-all">View all</a>
             </div>
           </li>

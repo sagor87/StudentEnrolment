@@ -29,6 +29,7 @@
           <div class="card col-lg-4 mx-auto">
             <div class="card-body px-5 py-5">
                     @include('admin.partials.message')
+                    @include('admin.partials.success_message')
 					@include('admin.partials.danger_message')
               <h3 class="card-title text-left mb-3">Login</h3>
               <form action="{{route('admin.login.home')}}" method="post" >
