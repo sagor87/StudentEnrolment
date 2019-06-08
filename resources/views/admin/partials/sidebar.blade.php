@@ -18,7 +18,7 @@
             <span class="nav-link">Main</span>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{{route('all.student')}}">
               <i class="mdi mdi-gauge menu-icon"></i>
               <span class="menu-title">All Student</span>
             </a>
@@ -59,20 +59,18 @@
             <div class="collapse" id="sidebar_layouts">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/layout/compact-menu.html">Compact menu</a>
+                  <a class="nav-link" href="pages/layout/compact-menu.html">CSE</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/layout/sidebar-collapsed.html">Icon menu</a>
+                  <a class="nav-link" href="pages/layout/sidebar-collapsed.html">EEE</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/layout/sidebar-hidden.html">Sidebar Hidden</a>
+                  <a class="nav-link" href="pages/layout/sidebar-hidden.html">ETE</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/layout/sidebar-hidden-overlay.html">Sidebar Overlay</a>
+                  <a class="nav-link" href="pages/layout/sidebar-hidden.html">CE</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="pages/layout/sidebar-fixed.html">Sidebar Fixed</a>
-                </li>
+
               </ul>
             </div>
           </li>
@@ -88,13 +86,13 @@
             <div class="collapse" id="errorSubmenu">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/samples/error-404.html">
-                    404
+                  <a class="nav-link" href="{{route('all.teacher')}}">
+                    All Teacher
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/samples/error-500.html">
-                    500
+                  <a class="nav-link" href="{{route('add.teacher')}}">
+                    Add Teacher
                   </a>
                 </li>
               </ul>

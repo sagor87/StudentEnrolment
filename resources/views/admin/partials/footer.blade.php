@@ -31,6 +31,9 @@
 <script src="{{asset('admin/node_modules/chartist-plugin-legend/chartist-plugin-legend.js')}}"></script>
 <script src="{{asset('admin/node_modules/chart.js/dist/Chart.min.js')}}"></script>
 <script src="{{asset('admin/node_modules/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
+
+<script src="{{asset('admin/node_modules/datatables.net/js/jquery.dataTables.js')}}"></script>
+<script src="{{asset('admin/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js')}}"></script>
 <!-- End plugin js for this page-->
 <!-- inject:js -->
 <script src="{{asset('admin/js/off-canvas.js')}}"></script>
@@ -40,8 +43,23 @@
 <!-- endinject -->
 <!-- Custom js for this page-->
 <script src="{{asset('admin/js/dashboard_1.js')}}"></script>
+<script src="{{asset('admin/js/data-table.js')}}"></script>
 <!-- End custom js for this page-->
+<script type="text/javascript" src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js')}}"></script>
+<script>
+        $(document).on("click", "#delete", function(e) {
+            e.preventDefault();
+            var link = $(this).attr('href');
+            bootbox.confirm("Are you want to delete!", function(confirmed) {
+                if(confirmed){
+                    window.location.href = link;
+                };
+            });
+        });
+</script>
 </body>
+
+
 
 
 <!-- Mirrored from www.urbanui.com/salt/jquery/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:32:50 GMT -->

@@ -22,4 +22,13 @@ Route::get('/backend/index', 'AdminPagesController@index')->name('admin.index');
 Route::get('/backend/addstudent', 'StudentController@index')->name('add.student');
 Route::post('/backend/addstudent', 'StudentController@store')->name('store.student');
 Route::get('/backend/allstudent', 'StudentController@allstudent')->name('all.student');
+Route::get('/backend/delete-student/{id}', 'StudentController@delete')->name('student_delete');
+Route::get('/backend/view-student/{id}', 'StudentController@show')->name('student_view');
+Route::get('/backend/edit-student/{id}', 'StudentController@edit')->name('student_edit');
+Route::post('/backend/update-student/{id}', 'StudentController@update')->name('student_update');
+Route::post('/backend/update-student-Image/{id}', 'StudentController@image_update')->name('image_update');
+
+Route::get('/backend/addteacher', 'TeacherController@index')->name('add.teacher');
+Route::post('/backend/addteacher', 'TeacherController@store')->name('store.teacher');
+Route::get('/backend/allteacher', 'TeacherController@allteacher')->name('all.teacher');
 

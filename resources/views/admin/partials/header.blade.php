@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('admin/images/favicon.html')}}" />
+
+  <link rel="stylesheet" href="{{asset('admin/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" />
 </head>
 <body class="sidebar-dark">
   <!-- partial:partials/_settings-panel.html -->

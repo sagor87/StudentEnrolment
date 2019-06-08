@@ -6,6 +6,7 @@ use App\Student;
 use Illuminate\Http\Request;
 use Image;
 use DB;
+Use File;
 
 
 class StudentController extends Controller
@@ -27,7 +28,9 @@ class StudentController extends Controller
      */
     public function allstudent()
     {
-        return view('admin.pages.all_student');
+        $students = Student::get();
+
+        return view('admin.pages.all_student',compact('students'));
     }
 
     /**
@@ -47,7 +50,8 @@ class StudentController extends Controller
             'student_address'=> 'required',
             'student_password'=> 'required',
             'student_department'=> 'required',
-            'student_admissionyear'=> 'required'
+            'student_admissionyear'=> 'required',
+            'student_image'=> 'required'
 
             ]);
 
@@ -85,9 +89,10 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show(Student $student,$id)
     {
-        //
+        $student = Student::find($id);
+        return view ('admin.pages.student_view',compact('student'));
     }
 
     /**
@@ -96,9 +101,10 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit(Student $student,$id)
     {
-        //
+        $student = Student::find($id);
+        return view ('admin.pages.update_student', compact('student'));
     }
 
     /**
@@ -108,9 +114,56 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'student_name' => 'required',
+            'student_fathername' => 'required',
+            'student_mothername' => 'required',
+            'student_email' => 'required',
+            'student_address' => 'required'
+        ]);
+
+        $student = Student::find($id);
+        $student->student_name = $request->student_name;
+        $student->student_fathername = $request->student_fathername;
+        $student->student_mothername = $request->student_mothername;
+        $student->student_email = $request->student_email;
+        $student->student_address= $request->student_address;
+        $student->save();
+
+        return redirect(route('all.student'))->with('successMsg', 'information successfully update');
+
+    }
+
+    public function image_update(Request $request, $id)
+    {
+         $student = Student::find($id);
+
+         if (count($request->student_image) > 0) {
+
+            if (!is_null($student)) {
+
+                if (File::exists('image/'.$student->student_image)) {
+                    File::delete('image/'.$student->student_image);
+                }
+
+
+            }
+
+            $image = $request->file('student_image');
+            $img=str_random(20);
+            $ext = strtolower($image->getClientOriginalExtension());
+            $image_name=$img.time().'.'.$ext;
+            $location = public_path('image/'.$image_name);
+            Image::make($image)->save($location);
+
+            $student->student_image=$image_name;
+            $student->save();
+
+            return redirect(route('all.student'))->with('successMsg', 'information successfully update');
+    }
+
     }
 
     /**
@@ -119,8 +172,20 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function delete(Student $student , $id)
     {
-        //
+        $student=Student::find($id);
+        if (!is_null($student)) {
+
+            if (File::exists('image/'.$student->student_image)) {
+                File::delete('image/'.$student->student_image);
+            }
+
+            $student->delete();
+        }
+
+        return redirect(route('all.student'))->with('successMsg', 'information successfully Delete');
+
+
     }
 }
