@@ -59,16 +59,16 @@
             <div class="collapse" id="sidebar_layouts">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/layout/compact-menu.html">CSE</a>
+                <a class="nav-link" href="{{route('cse')}}">CSE</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/layout/sidebar-collapsed.html">EEE</a>
+                  <a class="nav-link" href="{{route('eee')}}">EEE</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/layout/sidebar-hidden.html">ETE</a>
+                  <a class="nav-link" href="{{route('ete')}}">ETE</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/layout/sidebar-hidden.html">CE</a>
+                  <a class="nav-link" href="{{route('ce')}}">CE</a>
                 </li>
 
               </ul>

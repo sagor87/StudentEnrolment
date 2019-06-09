@@ -127,7 +127,7 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="{{asset('admin/images/salt_logo.svg')}}" alt="Logo"></a>
+        <a class="navbar-brand brand-logo" href="{{route('admin.index')}}"><img src="{{asset('admin/images/salt_logo.svg')}}" alt="Logo"></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
@@ -186,7 +186,7 @@
               <span class="count bg-danger">4</span>
             </a>
             <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
-              <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="">
                 <div class="sender-img">
                   <img src="{{asset("http://via.placeholder.com/47x47")}}" alt="">
                   <span class="badge badge-success">&nbsp;</span>

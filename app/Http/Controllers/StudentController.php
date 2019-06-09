@@ -43,7 +43,7 @@ class StudentController extends Controller
     {
         $this->validate($request, [
             'student_name'=> 'required',
-            'student_id'=> 'required',
+            'student_id'=> 'required|numeric',
             'student_fathername'=> 'required',
             'student_mothername'=> 'required',
             'student_email'=> 'required',

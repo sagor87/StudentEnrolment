@@ -13,30 +13,27 @@
                 <tr>
                     <th>SL</th>
                     <th>name</th>
-                    <th>ID</th>
                     <th>Email</th>
-                    <th>Image</th>
-                    <th>Department</th>
+                    <th>Mobile No.</th>
                     <th>Address</th>
 
                     <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach($students as $student)
+                @foreach($teachers as $teacher)
                 <tr>
-                    <td>{{$student->id}}</td>
-                    <td>{{$student->student_name}}</td>
-                    <td>{{$student->student_id}}</td>
-                    <td>{{$student->student_email}}</td>
-                    <td><img src="{{asset('image/'.$student->student_image)}}" style="height:80px; weight:80px;"/></td>
-                    <td>{{$student->student_department}}</td>
-                    <td>{{$student->student_address}}</td>
+                    <td>{{$teacher->id}}</td>
+                    <td>{{$teacher->teacher_name}}</td>
+                    <td>{{$teacher->teacher_email}}</td>
+                    <td>{{$teacher->teacher_mobile}}</td>
+
+                    <td>{{$teacher->teacher_address}}</td>
 
                     <td>
-                      <a class="btn btn-outline-primary" href="{{route('student_view',$student->id)}}"> View </a>
-                      <a class="btn btn-warning" href="{{route('student_edit',$student->id)}}"> Edit </a>
-                      <a href="{{route('student_delete',$student->id)}}" id="delete"><button class="btn btn-danger">Delete</button> </a>
+                      <a class="btn btn-outline-primary" href=""> View </a>
+                      <a class="btn btn-warning" href=""> Edit </a>
+                      <a href="" id="delete"><button class="btn btn-danger">Delete</button> </a>
 
                     </td>
                 </tr>

@@ -19,9 +19,9 @@ class TeacherController extends Controller
 
     public function allteacher()
     {
-        $teacher = Teacher::get();
+        $teachers = Teacher::get();
 
-        return view('admin.pages.all_teacher',compact('teacher'));
+        return view('admin.pages.all_teacher',compact('teachers'));
     }
 
     /**
@@ -42,7 +42,24 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'teacher_name'=> 'required',
+            'teacher_email'=> 'required',
+            'teacher_mobile'=> 'required',
+            'teacher_address'=> 'required'
+
+            ]);
+
+            $teacher=new Teacher;
+            $teacher->teacher_name=$request->teacher_name;
+            $teacher->teacher_email=$request->teacher_email;
+            $teacher->teacher_mobile=$request->teacher_mobile;
+            $teacher->teacher_address=$request->teacher_address;
+
+
+        $teacher->save();
+
+        return redirect(route('all.teacher'))->with('successMsg', 'Student successfully Added');
     }
 
     /**
